@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 var express = require("express");
 
 var app = express();
@@ -26,3 +27,21 @@ app.listen(PORT, function() {
   console.log("App listening on PORT: " + PORT);
 });
 
+=======
+var express = require ("express");
+var app = express();
+var PORT = process.env.PORT || 8080;
+
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+var path = require("path");
+app.get("*", function(req, res){
+    res.sendFile(path.join(__dirname, "/public/home.html"));
+});
+
+
+app.listen(PORT, function (){
+    console.log("App listening on PORT: " + PORT);
+});
+>>>>>>> 047ca7ac45f2df8f436645f22d7d289aee509b60
